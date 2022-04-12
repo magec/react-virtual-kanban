@@ -14,7 +14,6 @@ import {
 
 import * as propTypes from './propTypes';
 import * as decorators from '../decorators';
-import shallowCompare from 'react-addons-shallow-compare';
 import DragLayer from '../DragLayer';
 import SortableList from '../SortableList';
 
@@ -206,10 +205,6 @@ class Kanban extends React.PureComponent {
 
   onDragEndList({ listId }) {
     this.props.onDragEndList(this.listEndData({ listId }));
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
   }
 
   componentDidUpdate(_prevProps, prevState) {
